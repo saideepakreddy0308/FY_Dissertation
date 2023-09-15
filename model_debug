@@ -1,0 +1,42 @@
+digraph {
+	mu_alpha [label="mu_alpha
+~
+Normal" shape=ellipse]
+	mu_beta [label="mu_beta
+~
+Normal" shape=ellipse]
+	sigma [label="sigma
+~
+HalfCauchy" shape=ellipse]
+	sigma_alpha [label="sigma_alpha
+~
+HalfCauchy" shape=ellipse]
+	sigma_beta [label="sigma_beta
+~
+HalfCauchy" shape=ellipse]
+	subgraph cluster5 {
+		alpha [label="alpha
+~
+Normal" shape=ellipse]
+		label=5 labeljust=r labelloc=b style=rounded
+	}
+	subgraph cluster8 {
+		beta [label="beta
+~
+Normal" shape=ellipse]
+		label=8 labeljust=r labelloc=b style=rounded
+	}
+	subgraph cluster4705 {
+		y_obs [label="y_obs
+~
+Normal" shape=ellipse style=filled]
+		label=4705 labeljust=r labelloc=b style=rounded
+	}
+	mu_alpha -> alpha
+	sigma_alpha -> alpha
+	sigma_beta -> beta
+	mu_beta -> beta
+	sigma -> y_obs
+	alpha -> y_obs
+	beta -> y_obs
+}
