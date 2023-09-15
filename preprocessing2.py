@@ -9,7 +9,7 @@ def load_data(ticker, start_date, end_date):
 
 # Main code execution
 if __name__ == "__main__":
-    ticker = "SPY"  # Example Ticker
+    ticker = "QQQ"  # Example Ticker
     start_date = "2016-01-01"
     end_date = "2020-12-31"
     
