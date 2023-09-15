@@ -1,19 +1,19 @@
 digraph {
-	mu_alpha [label="mu_alpha
-~
-Normal" shape=ellipse]
-	mu_beta [label="mu_beta
-~
-Normal" shape=ellipse]
 	sigma [label="sigma
-~
-HalfCauchy" shape=ellipse]
-	sigma_alpha [label="sigma_alpha
 ~
 HalfCauchy" shape=ellipse]
 	sigma_beta [label="sigma_beta
 ~
 HalfCauchy" shape=ellipse]
+	mu_beta [label="mu_beta
+~
+Normal" shape=ellipse]
+	sigma_alpha [label="sigma_alpha
+~
+HalfCauchy" shape=ellipse]
+	mu_alpha [label="mu_alpha
+~
+Normal" shape=ellipse]
 	subgraph cluster5 {
 		alpha [label="alpha
 ~
@@ -36,7 +36,7 @@ Normal" shape=ellipse style=filled]
 	sigma_alpha -> alpha
 	sigma_beta -> beta
 	mu_beta -> beta
-	sigma -> y_obs
-	alpha -> y_obs
 	beta -> y_obs
+	alpha -> y_obs
+	sigma -> y_obs
 }
