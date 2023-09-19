@@ -1,0 +1,50 @@
+ETFs and Sectors:
+
+Commodities
+1.	Gold: GLD
+2.	Silver: SLV
+3.	Platinum: PPLT
+4.	Palladium: PALL
+5.	Copper: JJC
+6.	Aluminum: JJU
+7.	Natural Gas: UNG
+
+Agriculture
+1.	Corn: CORN
+2.	Soybeans: SOYB
+3.	Wheat: WEAT
+4.	Cotton: BAL
+5.	Coffee: JO
+
+Crude Oil
+1.	West Texas Intermediate: USO
+2.	Brent Crude: BNO
+
+Technology
+1.	Nasdaq 100: QQQ
+2.	Semiconductors: SMH
+3.	Cybersecurity: HACK
+4.	Cloud Computing: SKYY
+5.	Artificial Intelligence: BOTZ
+
+Finance
+1.	Financial Sector: XLF
+2.	Banking: KBE
+3.	Regional Banking: KRE
+4.	Insurance: KIE
+
+Healthcare
+1.	Overall Healthcare: XLV
+2.	Biotech: XBI
+3.	Pharmaceuticals: PJP
+4.	Medical Devices: IHI
+
+Market Benchmark
+1.	SPY
+
+Additional Sectors 
+1.	Real Estate: VNQ
+2.	Consumer Discretionary: XLY
+3.	Consumer Staples: XLP
+4.	Utilities: XLU
+5.	Telecommunications: VOX
