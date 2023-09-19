@@ -41,48 +41,55 @@ if __name__ == "__main__":
             df = load_data(sector, ticker, start_date, end_date)
             
             # Data Cleaning
-            
-            # Handling Missing Values
-            if df.isnull().any().any():
-                df.fillna(method='ffill', inplace=True)
-            
-            # Handling Outliers
-            z_scores = (df - df.mean()) / df.std()
-            outliers = (z_scores > 3).any(axis=1)
-            df = df[~outliers]
-            
-            # Data Transformation
-            
-            # Numerical Transformations: Log Returns
-            df['log_return'] = np.log(df['Close'] / df['Close'].shift(1))
-            
-            # Daily Returns
-            df['daily_return'] = (df['Close'] / df['Close'].shift(1)) - 1
-            
-            # Volatility
-            df['volatility'] = df['daily_return'].rolling(window=21).std() * np.sqrt(252)
-            
-            # Momentum
-            df['momentum'] = df['Close'] / df['Close'].rolling(window=90).mean() - 1
-            
-            # Categorical Data: Direction
-            df['Direction'] = np.where(df['log_return'] > 0, 1, 0)
-            
-            # Date-Time Formatting
-            df['Date'] = pd.to_datetime(df['Date'])
-            
-            # Data Resampling: Weekly Average
-            weekly_data = df.resample('W', on='Date').mean()
-            
-            # Feature Engineering: Moving Averages
-            df['MA_50'] = df['Close'].rolling(window=50).mean()
-            df['MA_100'] = df['Close'].rolling(window=100).mean()
-            df['MA_200'] = df['Close'].rolling(window=200).mean()
-            
-            # Remove first year data to start from "2018-01-01"
-            df = df[df['Date'] >= "2018-01-01"]
-            
-            # Saving pre-processed DataFrame for further steps
-            save_path = f"etf_data/preprocessed_{sector}_{ticker}_2018-01-01_to_{end_date}.csv"
-            df.to_csv(save_path, index=False)
-            print(f"  Saved processed data to {save_path}")
+
+            #  Only proceed if df is not None
+            if df is not None:
+                # Your existing data processing logic here
+                
+                # For example: Handling Missing Values
+                if df.isnull().any().any():
+                    df.fillna(method='ffill', inplace=True)
+
+                # Handling Outliers
+                z_scores = (df - df.mean()) / df.std()
+                outliers = (z_scores > 3).any(axis=1)
+                df = df[~outliers]
+                
+                # Data Transformation
+                
+                # Numerical Transformations: Log Returns
+                df['log_return'] = np.log(df['Close'] / df['Close'].shift(1))
+                
+                # Daily Returns
+                df['daily_return'] = (df['Close'] / df['Close'].shift(1)) - 1
+                
+                # Volatility
+                df['volatility'] = df['daily_return'].rolling(window=21).std() * np.sqrt(252)
+                
+                # Momentum
+                df['momentum'] = df['Close'] / df['Close'].rolling(window=90).mean() - 1
+                
+                # Categorical Data: Direction
+                df['Direction'] = np.where(df['log_return'] > 0, 1, 0)
+                
+                # Date-Time Formatting
+                df['Date'] = pd.to_datetime(df['Date'])
+                
+                # Data Resampling: Weekly Average
+                weekly_data = df.resample('W', on='Date').mean()
+                
+                # Feature Engineering: Moving Averages
+                df['MA_50'] = df['Close'].rolling(window=50).mean()
+                df['MA_100'] = df['Close'].rolling(window=100).mean()
+                df['MA_200'] = df['Close'].rolling(window=200).mean()
+                
+                # Remove first year data to start from "2018-01-01"
+                df = df[df['Date'] >= "2018-01-01"]
+                
+                # Saving pre-processed DataFrame for further steps
+                save_path = f"etf_data/preprocessed_{sector}_{ticker}_2018-01-01_to_{end_date}.csv"
+                df.to_csv(save_path, index=False)
+                print(f"  Saved processed data to {save_path}")
+
+            else:
+                print(f"No data available for sector: {sector}, ticker: {ticker}")
