@@ -57,8 +57,11 @@ for input_file in input_files:
     combined_data['MA_200'] = combined_data['Close'].rolling(window=200).mean()
     combined_data['Direction'] = combined_data['daily_return'].apply(lambda x: 1 if x > 0 else 0)
 
-    # Reset the index to get the 'Date' column back
+    # Reset the index to have 'Date' as a regular column
     combined_data.reset_index(inplace=True)
+
+    # Rename the first column to 'Date'
+    combined_data.rename(columns={combined_data.columns[0]: 'Date'}, inplace=True)
 
     # Save the transformed data to the output directory
     combined_data.to_csv(output_path, index=False)

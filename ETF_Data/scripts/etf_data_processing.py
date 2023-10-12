@@ -4,7 +4,8 @@ import os
 
 # Function to Load Data
 def load_data(sector, ticker, start_date, end_date):
-    file_path = f"ETF_Data/data/raw_etf_data/{sector}_{ticker}_{start_date}_to_{end_date}.csv"
+    script_dir = os.path.dirname(os.path.abspath(__file__))  # Get the directory of the script
+    file_path = os.path.join(script_dir, "etf_data", f"{sector}_{ticker}_{start_date}_to_{end_date}.csv")
     print(f"Trying to load {file_path}")
     try:
         df = pd.read_csv(file_path)
@@ -15,14 +16,15 @@ def load_data(sector, ticker, start_date, end_date):
 
 # Main code execution
 if __name__ == "__main__":
-    print(f"Current working directory: {os.getcwd()}")  # Print the current working directory
+    script_dir = os.path.dirname(os.path.abspath(__file__))  # Get the directory of the script
+    print(f"Current working directory: {script_dir}")
     
-    start_date = "2016-01-01"
+    start_date = "2017-01-01"
     end_date = "2022-12-31"
     
     sectors_tickers = {
-        "Commodities": ["GLD", "SLV", "PPLT", "PALL", "JJC", "JJU", "UNG"],
-        "Agriculture": ["CORN", "SOYB", "WEAT", "BAL", "JO"],
+        "Commodities": ["GLD", "SLV", "PPLT", "PALL","UNG"],
+        "Agriculture": ["CORN", "SOYB", "WEAT"],
         "Crude Oil": ["USO", "BNO"],
         "Technology": ["QQQ", "SMH", "HACK","SKYY","BOTZ"],
         "Finance": ["XLF","KBE", "KRE", "KIE"],
@@ -30,6 +32,7 @@ if __name__ == "__main__":
         "Market Benchmark": ["SPY"]
         # Add more sectors and their tickers here
     }
+    
     
     for sector, tickers in sectors_tickers.items():
         print(f"Processing data for sector: {sector}")
@@ -79,10 +82,10 @@ if __name__ == "__main__":
             df['MA_100'] = df['Close'].rolling(window=100).mean()
             df['MA_200'] = df['Close'].rolling(window=200).mean()
             
-            # Remove first year data to start from "2017-12-20"
-            # df = df[df['Date'] >= "2017-12-20"]
+            # Remove first year data to start from "2018-01-01"
+            df = df[df['Date'] >= "2018-01-01"]
             
             # Saving pre-processed DataFrame for further steps
-            save_path = f"ETF_Data/data/processed_etf_data/preprocessed_{sector}_{ticker}_2016-01-01_to_{end_date}.csv"
+            save_path = f"preprocessed_{sector}_{ticker}_2018-01-01_to_{end_date}.csv"
             df.to_csv(save_path, index=False)
             print(f"  Saved processed data to {save_path}")
