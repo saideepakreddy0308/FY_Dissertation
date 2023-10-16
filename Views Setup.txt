@@ -1,0 +1,49 @@
+1. Composite Leading Index and Broader Market:
+
+    The CLI (Composite Leading Index) gives forward-looking insights. A sustained upward shift might suggest improved market conditions in the coming months.
+    View: If the 6-month average of the CLI is showing an upward trend, then expect SPY (a broader market ETF) to perform positively.
+
+
+2. Tech Sector's Performance relative to Consumer Confidence:
+
+    As consumer confidence rises, the tech sector may benefit disproportionately due to increased spending on high-end products and services.
+    View: If the monthly rate of change of CCI is rising and is above its historical average, expect SKYY (Cloud computing ETF, representative of tech innovations) to outperform.
+
+
+3. Interplay between Momentum and Volatility:
+
+    An asset that has high momentum but also high volatility can be riskier. The momentum might not sustain.
+    View: For any ETF, if its momentum is in the top 10% of its historical values but its volatility is also in the top 10%, predict its return to be negative, expecting a reversal.
+
+
+4. Short-Term Interest Rates and Banking:
+
+    Banks often benefit directly from a rise in short-term interest rates due to increased net interest margins.
+    View: If the 3-month average of short-term interest rates is increasing, predict a positive return for KRE (Regional Banking ETF).
+
+
+_____VIEWS TIPS______
+
+1. Economic Indicators:
+   macro view on the entire market or on sectors that are heavily influenced by these indicators. For instance:
+   - If one of your indicators is an interest rate, you might have a view on finance-related ETFs.
+   - If another indicator pertains to technology growth, you might have views on tech-related ETFs.
+
+2. ETF-Specific Views:
+   Insights or analyses on each ETF's expected performance, then you can have a view for each ETF. However, views should be based on concrete beliefs or research about the ETF's future performance. 
+
+3. Combinations:
+   It's not about individual ETFs but rather how some ETFs might perform relative to others.
+   - If you believe that tech ETFs will outperform healthcare ETFs in the future, that's a view.
+   - If you think a certain group of ETFs will react to a specific economic event, that's another view.
+
+Always remember: 
+
+1. Quality Over Quantity: IA handful of well-researched and strong views than dozens of weak or uncertain views. 
+
+2. Overfitting: Too many views can lead to overfitting. The model might fit your views perfectly but perform poorly out-of-sample because it's too tailored to specific beliefs.
+
+Another working tip:
+3. Confidence Levels: The Black-Litterman model allows you to assign confidence levels to your views. If you're uncertain about some views, you can assign them lower confidence, and the model will consider them less in the optimization.
+
+Firstly, do prepare a solid 20-30 views.
