@@ -15,7 +15,7 @@ etf_by_sector = {
 
 # Define date range (for this example, past 7 years, as two years in the data are helpful for feature engineering)
 start_date = "2016-01-01"
-end_date = "2022-12-31"
+end_date = "2023-07-31"
 
 # Create a directory to store the ETF data if it doesn't already exist
 main_directory = "ETF_Data"

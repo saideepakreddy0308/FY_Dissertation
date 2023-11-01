@@ -18,7 +18,7 @@ if __name__ == "__main__":
     print(f"Current working directory: {os.getcwd()}")  # Print the current working directory
     
     start_date = "2016-01-01"
-    end_date = "2022-12-31"
+    end_date = "2023-07-31"
     
     sectors_tickers = {
         "Commodities": ["GLD", "SLV", "PPLT", "PALL", "JJC", "JJU", "UNG"],
