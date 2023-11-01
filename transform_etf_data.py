@@ -31,8 +31,8 @@ for input_file in input_files:
     data['Date'] = pd.to_datetime(data['Date'])
     data.set_index('Date', inplace=True)
 
-    # Create a new date range with daily frequency from 2017-12-20 to 2022-12-31
-    date_range = pd.date_range(start='2016-01-01', end='2022-12-31', freq='D')
+    # Create a new date range with daily frequency from 2017-12-20 to 2023-07-31
+    date_range = pd.date_range(start='2016-01-01', end='2023-07-31', freq='D')
 
     # Create a DataFrame with missing dates
     missing_data = pd.DataFrame(index=date_range)

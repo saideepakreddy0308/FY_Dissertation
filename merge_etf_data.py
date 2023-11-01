@@ -23,7 +23,8 @@ for input_file in input_files:
     data = pd.read_csv(input_path)
 
     # Filter data to remove dates before 01-01-2018
-    data = data[data['Date'] >= '2018-01-01']
+    # data = data[data['Date'] >= '2018-01-01']
+    data = data[data['Date'].between('2018-01-01', '2023-06-30')]
 
     # Append the filtered data to the merged_data DataFrame
     merged_data = merged_data.append(data, ignore_index=True)
