@@ -12,9 +12,11 @@ for file in files:
     # Read the data from the current file
     current_data = pd.read_csv(file)
     
+    # Calculate the percentage change and introduce a new column
+    current_data['Percentage Change'] = current_data['Close'].pct_change() * 100
+    
     # Append the current data to the merged_data DataFrame
     merged_data = merged_data.append(current_data, ignore_index=True)
 
 # Save the merged data to a new CSV file or perform further analysis
-merged_data.to_csv(r'ETF_Data\data\merged_data_2023.csv', index=False)
-
+merged_data.to_csv(r'ETF_Data\data\merged_data_2023_with_percentage_change.csv', index=False)
