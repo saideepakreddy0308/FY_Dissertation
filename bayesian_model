@@ -1,0 +1,20 @@
+digraph {
+	subgraph cluster24 {
+		alpha [label="alpha
+~
+Normal" shape=ellipse]
+		returns [label="returns
+~
+SkewNormal" shape=ellipse style=filled]
+		mu [label="mu
+~
+Normal" shape=ellipse]
+		sigma [label="sigma
+~
+HalfCauchy" shape=ellipse]
+		label=24 labeljust=r labelloc=b style=rounded
+	}
+	alpha -> returns
+	sigma -> returns
+	mu -> returns
+}
