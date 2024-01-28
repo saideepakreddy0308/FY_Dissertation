@@ -1,20 +1,20 @@
 digraph {
-	subgraph cluster24 {
-		mu [label="mu
+	subgraph cluster23 {
+		returns [label="returns
 ~
-Normal" shape=ellipse]
+SkewNormal" shape=ellipse style=filled]
 		sigma [label="sigma
 ~
 HalfCauchy" shape=ellipse]
 		alpha [label="alpha
 ~
 Normal" shape=ellipse]
-		returns [label="returns
+		mu [label="mu
 ~
-SkewNormal" shape=ellipse style=filled]
-		label=24 labeljust=r labelloc=b style=rounded
+Normal" shape=ellipse]
+		label=23 labeljust=r labelloc=b style=rounded
 	}
-	mu -> returns
 	sigma -> returns
 	alpha -> returns
+	mu -> returns
 }
